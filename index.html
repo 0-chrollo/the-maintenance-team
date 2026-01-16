@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jlf Automotive - Expert Vehicle Services for your Jaguar, Land Rover & Ford.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+                min-height: 100vh;
+            }
+    
+            /* Navbar Styles */
+            nav {
+               
+                position:absolute;
+                top: 0;
+                width: 100%;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.705) 0%, rgba(38, 39, 39, 0.389));
+                backdrop-filter: blur(10px);
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+    
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0.5rem 1.2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              
+                
+            }
+    
+            .logo {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                height: 45px;
+            }
+    
+            .logo img {
+                height:65px;
+                width: 70px;
+                
+               
+            }
+    
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+            }
+    
+            
+            .nav-menu li a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 500;
+                transition: color 0.3s ease;
+                position: relative;
+            }
+    
+            .nav-menu li a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #667eea;
+                transition: width 0.3s ease;
+            }
+    
+            .nav-menu li a:hover {
+                color: #667eea;
+            }
+    
+            .nav-menu li a:hover::after {
+                width: 100%;
+            }
+    
+            /* Burger Menu */
+            .burger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 5px;
+            }
+    
+            .burger span {
+                width: 25px;
+                height: 3px;
+                background: #ffffff;
+                border-radius: 0px;
+                transition: all 0.3s ease;
+            }
+    
+            /* Burger Animation */
+            .burger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+    
+            .burger.active span:nth-child(2) {
+                opacity: 0;
+            }
+    
+            .burger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+    
+            /* Content */
+            .content {
+                padding-top: 100px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                color: white;
+            }
+    
+            .content h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+    
+            .content p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+    
+            /* Mobile Styles */
+            @media (max-width: 768px) {
+                .burger {
+                    display: flex;
+                }
+    
+                .nav-menu {
+                    color: #fff;
+            
+          border-bottom: 3px solid rgb(99, 99, 99);
+                    
+                    position: fixed;
+                    left: 0;
+                    top: 60px;
+                    flex-direction: column;
+                    background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(38, 39, 39));
+                    width: 100%;
+                    text-align: center;
+                    gap: 0;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.4s ease-in-out;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                }
+    
+                .nav-menu.active {
+                    max-height: 400px;
+                }
+    
+                .nav-menu li {
+                    color: #fff;
+                    text-align: left;
+                    padding: 1rem 2rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                }
+    
+                .nav-menu li a::after {
+                    display: none;
+
+                }
+    
+                .content h1 {
+                    font-size: 2rem;
+                    color: #fff;
+                }
+    
+                .content p {
+                    font-size: 1rem;
+                    color: #fff;
+                }
+            }
+        </style>
+
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="tmt-logo.png" alt="Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    
+    
+        <script>
+            const burger = document.querySelector('.burger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu li a');
+    
+            // Toggle menu
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+    
+            // Close menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+    
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+                    burger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+            <style>
+
+                .header-container {
+                    border-top:3px solid rgb(49, 67, 110);
+                    min-height:70vh;
+                    padding: 3rem;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+        
+                .background-slide {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
+                    z-index: 1;
+                }
+        
+                .background-slide.active {
+                    opacity: 1;
+                }
+        
+                .background-slide::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(rgba(15, 15, 15, 0.917), rgba(30, 31, 33, 0.572));
+                    z-index: 2;
+                }
+        
+                .bg-1 {
+                    background: url('solarsp2.webp') center/cover;
+                    background-repeat: no-repeat;
+                    
+                }
+        
+                .bg-2 {
+                    background: url('solarsp2.webp') center/cover;
+                    background-repeat: no-repeat;
+                 
+                }
+        
+                .bg-3 {
+                    background: url('solarsp2.webp') center/cover;
+                    background-repeat: no-repeat;
+                    
+                }
+        
+    
+                .slides-container {
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 2px auto;
+                    padding: 2rem;
+                    position: relative;
+                    padding-bottom: 80px;
+                    z-index: 3;
+                }
+        
+                .slide {
+                    position: absolute;
+                    opacity: 0;
+                    transform: translateX(-30px);
+                    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                    max-width: 800px;
+                }
+        
+                .slide.active {
+                    opacity: 1;
+                    transform: translateX(0);
+                    position: relative;
+                }
+        
+                .slide h1 {
+                    font-size: 3.5rem;
+                    color: #fff;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.2;
+                    font-weight: 700;
+                }
+        
+                .highlight {
+                    color:rgb(154, 154, 154);
+                }
+        
+                .slide p {
+                    color: rgba(255,255,255,0.9);
+                    font-size: 1.2rem;
+                    line-height: 1.6;
+                    margin-bottom: 2rem;
+                    font-weight: 400;
+                }
+        
+                .indicators-container {  
+                
+                    left: 0;
+                    width: 100%;
+                }
+        
+                .indicators {
+                    display: flex;
+                    gap: 1rem;
+                }
+        
+                .indicator {
+                    width: 40px;
+                    height: 6px;
+                    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(117, 118, 118, 0.939));
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+        
+                .indicator.active {
+                    background: linear-gradient(135deg, rgb(30, 30, 30) 0%, rgba(59, 60, 60, 0.812));
+                    width: 60px;
+                }
+        
+                @media (max-width: 768px) {
+                    .header-container {
+                        padding: 3rem;
+                        align-items: flex-start;
+                    }
+        
+                    .slides-container {
+                        padding: 1rem;
+                        margin-top: 20vh;
+                    }
+        
+                    .slide h1 {
+                        font-size: 2rem;
+                        margin-bottom: 1rem;
+                    }
+        
+                    .slide p {
+                        font-size: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+        
+                    .indicator {
+                        width: 60px;
+                        height: 6px;
+                    }
+        
+                    .indicator.active {
+                        width: 45px;
+                    }
+                }
+        
+                @media (max-width: 480px) {
+                    .slide h1 {
+                        font-size: 1.8rem;
+                    }
+        
+                    .slide p {
+                        font-size: 0.9rem;
+                    }
+                }
+            </style>
+ 
+            <header class="header-container">
+                <!-- Background Slides -->
+                <div class="background-slide bg-1 active"></div>
+                <div class="background-slide bg-2"></div>
+                <div class="background-slide bg-3"></div>
+              
+        
+                <div class="slides-container">
+<!-- Slide 1 -->
+<div class="slide active">
+    <h1>Your Trusted <span class="highlight">Jaguar, Land Rover & Ford</span> Specialists</h1>
+    <p>Expert diagnostics and repairs for luxury vehicles. From routine maintenance to complex engine rebuilds, we keep your car running at its best.</p>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+    <h1><span class="highlight">Premium Service</span> Without the Dealership Price Tag</h1>
+    <p>Specialist knowledge meets affordability. Get instant quotes 24/7 and book your service online..</p>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+    <h1>EcoBoost Engine Problems? <span class="highlight">We've Got You Covered</span></h1>
+    <p>From R23k turbo rebuilds to full diagnostics, our certified technicians specialize in Ford EcoBoost engines. Quality parts, expert work, guaranteed results.</p>
+</div>
+                    
+        <BR>
+                    <style>
+            .glass-button {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.58) 0%, rgba(38, 39, 39, 0.469));
+                border: 2px solid rgba(255, 255, 255, 0.5); /* Glass border */
+                backdrop-filter: blur(10px); /* Blur effect */
+                -webkit-backdrop-filter: blur(4px); /* Safari support */
+                border-radius: 1px; /* Rounded corners */
+                padding: 10px 20px; /* Button size */
+                text-align: center;
+                text-decoration: none;
+                color: #fff; /* Text color */
+                font-size: 16px;
+                cursor: pointer;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+              }
+              
+              .glass-button:hover {
+                background: rgb(255, 255, 255);
+                color:black; /* Hover effect */
+                border: 1px solid rgba(255, 255, 255, 0.7); /* Hover border effect */
+              }
+              </style>
+                    <div>
+                        <p><a href="#services" class="glass-button">All Services <i class="fa-solid fa-angles-right"></i></a></p>
+                    </div>
+           <br>
+           <br>
+           <br>
+        
+    
+        
+                    <!-- Indicators Container -->
+                    <div class="indicators-container">
+                        <div class="indicators">
+                            <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                       
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+            <script>
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('.slide');
+                const backgroundSlides = document.querySelectorAll('.background-slide');
+                const indicators = document.querySelectorAll('.indicator');
+                let slideInterval = setInterval(nextSlide, 4000);
+        
+                function showSlide(n) {
+                    // Remove active classes
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    backgroundSlides.forEach(bg => bg.classList.remove('active'));
+                    indicators.forEach(indicator => indicator.classList.remove('active'));
+                    
+                    // Update current slide
+                    currentSlide = (n + slides.length) % slides.length;
+                    
+                    // Add active classes
+                    slides[currentSlide].classList.add('active');
+                    backgroundSlides[currentSlide].classList.add('active');
+                    indicators[currentSlide].classList.add('active');
+                }
+        
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
+        
+                // Indicator click handlers
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        clearInterval(slideInterval);
+                        showSlide(index);
+                        slideInterval = setInterval(nextSlide, 5000);
+                    });
+                });
+            </script>
+      
+
+</body>
+</html>
+
+
+
+
