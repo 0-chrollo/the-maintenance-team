@@ -521,6 +521,94 @@
                 });
             </script>
       
+  
+          <style>
+              .dasim-features-wrapper {
+                  background-color: #f5f5f5;
+                  padding: 0;
+                  margin: 0;
+              }
+      
+              .dasim-features-container {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 0;
+                  max-width: 100%;
+                  margin: 0 auto;
+              }
+      
+              .dasim-feature-card {
+                background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgba(31, 32, 32, 0.96));              
+                  color: white;
+                  padding: 30px 25px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+              }
+      
+              .dasim-feature-title {
+                  font-size: 20px;
+                  font-weight: 700;
+                  margin: 0 0 12px 0;
+                  line-height: 1.3;
+              }
+      
+              .dasim-feature-description {
+                  font-size: 15px;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-weight: 300;
+                  opacity: 0.95;
+              }
+      
+              @media (max-width: 1024px) {
+                  .dasim-features-container {
+                      grid-template-columns: repeat(2, 1fr);
+                  }
+              }
+      
+              @media (max-width: 640px) {
+                  .dasim-features-container {
+                      grid-template-columns: 1fr;
+                  }
+      
+                  .dasim-feature-card {
+                      padding: 25px 20px;
+                  }
+      
+                  .dasim-feature-title {
+                      font-size: 20px;
+                  }
+      
+                  .dasim-feature-description {
+                      font-size: 14px;
+                  }
+              }
+          </style>
+
+          <div class="dasim-features-wrapper">
+              <div class="dasim-features-container">
+                  <div class="dasim-feature-card">
+                      <h3 class="dasim-feature-title">Fresh, Healthy Broilers</h3>
+                      <p class="dasim-feature-description">Raised in clean, bio-secure environments, our chickens are vetted and perfect for meat production.</p>
+                  </div>
+      
+                  <div class="dasim-feature-card">
+                      <h3 class="dasim-feature-title">High-Quality Feed</h3>
+                      <p class="dasim-feature-description">We provide balanced poultry feed that ensures optimal healthy growth for your broilers.</p>
+                  </div>
+      
+                  <div class="dasim-feature-card">
+                      <h3 class="dasim-feature-title">Clean Wood Shavings</h3>
+                      <p class="dasim-feature-description">Dust-free, dry, and hygienic bedding to keep your poultry houses in top condition.</p>
+                  </div>
+      
+                  <div class="dasim-feature-card">
+                      <h3 class="dasim-feature-title">Competitive Bulk Pricing</h3>
+                      <p class="dasim-feature-description">Save more when you order in bulk – perfect for resellers and commercial farmers.</p>
+                  </div>
+              </div>
+          </div>
 
 </body>
 </html>
