@@ -1290,6 +1290,250 @@
     </script>
 
 
+
+
+
+    <style>
+
+
+        .bottom-section {
+            position: relative;
+            width: 100%;
+            margin-bottom: 100px;
+            
+        }
+
+        .bottom-image-container {
+         
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: -80px;
+        }
+
+        .bottom-image-container::before {
+            padding:30px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            z-index: 1;
+        }
+
+        .bottom-image {
+            padding:30px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .bottom-content {
+            padding:30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            width: 90%;
+            max-width: 700px;
+        }
+
+        .bottom-content h1 {
+            
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .bottom-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: #000000;
+            color: white;
+            padding: 14px 32px;
+            border: 2px solid white;
+            border-radius: 1px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #157f73;
+        }
+
+        .stats-card {
+            position: relative;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            border-radius: 8\1px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .stat-item {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item:first-child {
+            background: #000000;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item:first-child .stat-number {
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .stat-item:first-child .stat-label {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-container {
+                height: 300px;
+                margin-bottom: -40px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .stats-card {
+                grid-template-columns: repeat(2, 1fr);
+                width: 85%;
+            }
+
+            .stat-item {
+                padding: 1.5rem 1rem;
+                border-right: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat-item:nth-child(3),
+            .stat-item:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .stat-item:nth-child(4) {
+                border-right: none;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bottom-image-container {
+                height: 280px;
+                margin-bottom: -30px;
+            }
+
+            .bottom-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .bottom-content p {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .bottom-section {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+
+    <section class="bottom-section">
+        <div class="bottom-image-container">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=400&fit=crop" alt="Healthcare consultation" class="hero-image">
+            <div class="bottom-content">
+                <h1>Explore Comprehensive Care for You and Your Family</h1>
+                <p>From baby immunization to family planning, HIV counseling, and wellness assessments, our team is here to provide compassionate, comprehensive healthcare services tailored to your needs.</p>
+                <button class="cta-button">Get Quote</button>
+            </div>
+            
+        </div>
+<br>
+<br>
+<br>
+        <div class="stats-card">
+            <div class="stat-item">
+                <div class="stat-number">128+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Expert Team</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Services Offered</div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
 
